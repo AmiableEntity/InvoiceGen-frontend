@@ -1,8 +1,0 @@
-{
-  "/_not-found/page": "/_not-found",
-  "/invoice/[id]/page": "/invoice/[id]",
-  "/page": "/",
-  "/dashboard/invoices/new/page": "/dashboard/invoices/new",
-  "/dashboard/page": "/dashboard",
-  "/dashboard/invoices/page": "/dashboard/invoices"
-}

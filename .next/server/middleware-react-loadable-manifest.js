@@ -1,0 +1,1 @@
+self.__REACT_LOADABLE_MANIFEST='{"components/invoice/PayInvoiceButton.tsx -> @/lib/stellar":{"id":1280,"files":[]},"components/invoice/PayInvoiceButton.tsx -> @stellar/stellar-sdk":{"id":9050,"files":[]}}';

@@ -73,7 +73,8 @@ export function CreateInvoiceForm({ onSuccess }: Props) {
         ...data,
         invoiceNumber: generateInvoiceNumber(),
         freelancerWallet: wallet.publicKey ?? "",
-        items: data.items.map((item) => ({
+        items: data.items.map((item, i) => ({
+          id: `item_${i}`,
           ...item,
           total: item.quantity * item.unitPrice,
         })),

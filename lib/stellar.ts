@@ -141,7 +141,6 @@ export async function getAccountBalances(
       if (balance.asset_type === "native") {
         xlm = parseFloat(balance.balance).toFixed(2);
       } else if (
-        balance.asset_type !== "native" &&
         "asset_code" in balance &&
         balance.asset_code === "USDC"
       ) {

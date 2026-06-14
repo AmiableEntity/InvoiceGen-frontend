@@ -15,19 +15,25 @@ function StatCard({
   value,
   icon: Icon,
   color,
+  isLoading,
 }: {
   title: string;
   value: string | number;
   icon: React.ElementType;
   color: string;
+  isLoading?: boolean;
 }) {
   return (
     <Card>
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
-          <div>
+          <div className="flex-1">
             <p className="text-sm text-muted-foreground">{title}</p>
-            <p className="text-2xl font-bold mt-1">{value}</p>
+            {isLoading ? (
+              <div className="h-8 w-24 rounded-md shimmer mt-1" />
+            ) : (
+              <p className="text-2xl font-bold mt-1">{value}</p>
+            )}
           </div>
           <div className={`h-12 w-12 rounded-xl flex items-center justify-center ${color}`}>
             <Icon className="h-6 w-6" />
@@ -67,24 +73,28 @@ export default function DashboardPage() {
           value={formatAmount(stats.totalRevenue, "USDC")}
           icon={TrendingUp}
           color="bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400"
+          isLoading={isLoading}
         />
         <StatCard
           title="Total Invoices"
           value={stats.totalInvoices}
           icon={FileText}
           color="bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400"
+          isLoading={isLoading}
         />
         <StatCard
           title="Pending"
           value={stats.totalPending}
           icon={Clock}
           color="bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-400"
+          isLoading={isLoading}
         />
         <StatCard
           title="Overdue"
           value={stats.totalOverdue}
           icon={AlertTriangle}
           color="bg-red-100 text-red-600 dark:bg-red-900/30 dark:text-red-400"
+          isLoading={isLoading}
         />
       </div>
 

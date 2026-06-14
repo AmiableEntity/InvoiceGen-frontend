@@ -37,9 +37,14 @@ export function WalletButton() {
           <span className="font-mono text-xs">{truncateAddress(wallet.publicKey)}</span>
           <span className="text-xs text-muted-foreground capitalize">{wallet.network}</span>
         </div>
-        <Button variant="ghost" size="icon" onClick={disconnect} title="Disconnect wallet">
-          <LogOut className="h-4 w-4" />
-        </Button>
+        <div className="relative group">
+          <Button variant="ghost" size="icon" onClick={disconnect} title="Disconnect wallet" aria-label="Disconnect wallet">
+            <LogOut className="h-4 w-4" />
+          </Button>
+          <span className="pointer-events-none absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap rounded bg-foreground px-2 py-1 text-xs text-background opacity-0 group-hover:opacity-100 transition-opacity">
+            Disconnect
+          </span>
+        </div>
       </div>
     );
   }

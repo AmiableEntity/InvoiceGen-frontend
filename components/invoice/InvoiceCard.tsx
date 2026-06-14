@@ -21,7 +21,7 @@ export function InvoiceCard({ invoice, onDelete }: Props) {
   };
 
   return (
-    <Card className="group hover:shadow-md transition-shadow duration-200">
+    <Card className="group hover:shadow-lg hover:-translate-y-0.5 transition-all duration-200">
       <CardContent className="p-5">
         <div className="flex items-start justify-between gap-4">
           {/* Left: invoice info */}
@@ -57,7 +57,7 @@ export function InvoiceCard({ invoice, onDelete }: Props) {
               View
             </Button>
           </Link>
-          <Button variant="ghost" size="sm" onClick={copyLink} title="Copy shareable link">
+          <Button variant="ghost" size="sm" onClick={copyLink} title="Copy shareable link" className="opacity-0 group-hover:opacity-100 transition-opacity">
             <Copy className="h-3.5 w-3.5" />
           </Button>
           {onDelete && (
@@ -65,7 +65,7 @@ export function InvoiceCard({ invoice, onDelete }: Props) {
               variant="ghost"
               size="sm"
               onClick={() => onDelete(invoice.id)}
-              className="text-destructive hover:text-destructive"
+              className="text-destructive hover:text-destructive opacity-0 group-hover:opacity-100 transition-opacity"
               title="Delete invoice"
             >
               <Trash2 className="h-3.5 w-3.5" />

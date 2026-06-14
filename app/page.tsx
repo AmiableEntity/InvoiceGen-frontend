@@ -111,8 +111,36 @@ export default function LandingPage() {
         </div>
       </section>
 
-      <footer className="border-t py-6 text-center text-sm text-muted-foreground">
-        © {new Date().getFullYear()} StellarInvoice. Built on the Stellar Network.
+      <footer className="border-t py-8 px-4">
+        <div className="container max-w-5xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
+          <span>© {new Date().getFullYear()} StellarInvoice. Built on the Stellar Network.</span>
+          <div className="flex items-center gap-4">
+            <a
+              href="https://stellar.org"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              Stellar
+            </a>
+            <a
+              href="https://www.freighter.app/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              Freighter
+            </a>
+            <a
+              href="https://github.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-foreground transition-colors"
+            >
+              GitHub
+            </a>
+          </div>
+        </div>
       </footer>
     </div>
   );

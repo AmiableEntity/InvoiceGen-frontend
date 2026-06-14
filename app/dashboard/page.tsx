@@ -105,6 +105,20 @@ export default function DashboardPage() {
               <div key={i} className="h-40 rounded-2xl shimmer" />
             ))}
           </div>
+        ) : invoices.length === 0 ? (
+          <div className="flex flex-col items-center justify-center py-16 text-center border rounded-2xl bg-muted/20">
+            <FileText className="h-12 w-12 text-muted-foreground/40 mb-4" />
+            <p className="font-semibold text-muted-foreground">No invoices yet</p>
+            <p className="text-sm text-muted-foreground mt-1 mb-4">
+              Create your first invoice to get started.
+            </p>
+            <Link href="/dashboard/invoices/new">
+              <Button variant="stellar" size="sm">
+                <Plus className="mr-2 h-4 w-4" />
+                New Invoice
+              </Button>
+            </Link>
+          </div>
         ) : (
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
             {invoices.slice(0, 6).map((invoice) => (
